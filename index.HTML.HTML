@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Love 💕</title>
+  <style>
+    body {
+      background: radial-gradient(circle at top, #ffd1dc, #ffb6c1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+    }
+
+    /* Glowing romantic photo frame */
+    .photo-frame {
+      background: rgba(255, 255, 255, 0.3);
+      border: 3px solid rgba(255, 105, 180, 0.6);
+      border-radius: 20px;
+      padding: 15px;
+      width: 250px;
+      height: 320px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 30px rgba(255, 105, 180, 0.5);
+      backdrop-filter: blur(8px);
+      transition: all 0.4s ease;
+      position: relative;
+    }
+
+    .photo-frame:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px rgba(255, 20, 147, 0.7);
+    }
+
+    .photo-frame img {
+      width: 200px;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 15px;
+      border: 3px solid #ff4d6d;
+      box-shadow: 0 0 20px rgba(255, 182, 193, 0.8);
+    }
+
+    .caption {
+      margin-top: 10px;
+      font-size: 18px;
+      color: #e75480;
+      font-weight: 600;
+      text-align: center;
+      text-shadow: 0 0 8px rgba(255, 105, 180, 0.4);
+    }
+
+    /* Floating red hearts */
+    .heart {
+      position: absolute;
+      bottom: -20px;
+      font-size: 20px;
+      color: red;
+      animation: floatUp 6s linear infinite;
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-110vh) scale(1.5);
+        opacity: 0;
+      }
+    }
+
+    /* Romantic music button (below-right) */
+    .music-btn {
+      background: linear-gradient(135deg, #ff4d6d, #ff80a1);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 15px;
+      box-shadow: 0 6px 15px rgba(255, 105, 180, 0.4);
+      transition: all 0.3s ease;
+      font-family: 'Poppins', sans-serif;
+      align-self: flex-end;
+    }
+
+    .music-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 25px rgba(255, 105, 180, 0.6);
+    }
+
+    /* Container for both frame and button */
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end; /* button goes to right */
+      gap: 5px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Background Music -->
+  <audio id="bg-music" src="Alipin.mp3" preload="auto" loop></audio>
+
+  <div class="container">
+    <div class="photo-frame">
+      <img src="Girlfriend.jpg" alt="Girlfriend Photo">
+      <div class="caption">MY JESHIELA 💗</div>
+    </div>
+
+    <!-- Play button below-right -->
+    <button class="music-btn" onclick="playMusic()">🎵 Play Music</button>
+  </div>
+
+  <script>
+    // Floating red hearts
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.textContent = "❤";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+      heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+    setInterval(createHeart, 500);
+
+    // Play music
+    function playMusic() {
+      const music = document.getElementById("bg-music");
+      music.play().then(() => {
+        console.log("Music is playing 🎶");
+      }).catch((error) => {
+        console.log("User gesture required ❤️", error);
+      });
+    }
+  </script>
+</body>
+</html>
+
+
