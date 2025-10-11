@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Love 💕</title>
+  <title>My Love 💖</title>
   <style>
     body {
       background: radial-gradient(circle at top, #ffd1dc, #ffb6c1);
@@ -16,7 +16,7 @@
       overflow: hidden;
     }
 
-    /* Glowing romantic photo frame */
+    /* Romantic photo frame */
     .photo-frame {
       background: rgba(255, 255, 255, 0.3);
       border: 3px solid rgba(255, 105, 180, 0.6);
@@ -57,7 +57,7 @@
       text-shadow: 0 0 8px rgba(255, 105, 180, 0.4);
     }
 
-    /* Floating red hearts */
+    /* Floating hearts */
     .heart {
       position: absolute;
       bottom: -20px;
@@ -69,17 +69,11 @@
     }
 
     @keyframes floatUp {
-      0% {
-        transform: translateY(0) scale(1);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-110vh) scale(1.5);
-        opacity: 0;
-      }
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-110vh) scale(1.5); opacity: 0; }
     }
 
-    /* Romantic music button (below-right) */
+    /* Play Music Button */
     .music-btn {
       background: linear-gradient(135deg, #ff4d6d, #ff80a1);
       color: white;
@@ -89,65 +83,4 @@
       font-size: 16px;
       cursor: pointer;
       margin-top: 15px;
-      box-shadow: 0 6px 15px rgba(255, 105, 180, 0.4);
-      transition: all 0.3s ease;
-      font-family: 'Poppins', sans-serif;
-      align-self: flex-end;
-    }
-
-    .music-btn:hover {
-      transform: scale(1.1);
-      box-shadow: 0 10px 25px rgba(255, 105, 180, 0.6);
-    }
-
-    /* Container for both frame and button */
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end; /* button goes to right */
-      gap: 5px;
-    }
-  </style>
-</head>
-<body>
-  <!-- Background Music -->
-  <audio id="bg-music" src="Alipin.mp3" preload="auto" loop></audio>
-
-  <div class="container">
-    <div class="photo-frame">
-      <img src="Girlfriend.jpg" alt="Girlfriend Photo">
-      <div class="caption">MY JESHIELA 💗</div>
-    </div>
-
-    <!-- Play button below-right -->
-    <button class="music-btn" onclick="playMusic()">🎵 Play Music</button>
-  </div>
-
-  <script>
-    // Floating red hearts
-    function createHeart() {
-      const heart = document.createElement("div");
-      heart.classList.add("heart");
-      heart.textContent = "❤";
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.fontSize = (Math.random() * 20 + 15) + "px";
-      heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
-      document.body.appendChild(heart);
-      setTimeout(() => heart.remove(), 6000);
-    }
-    setInterval(createHeart, 500);
-
-    // Play music
-    function playMusic() {
-      const music = document.getElementById("bg-music");
-      music.play().then(() => {
-        console.log("Music is playing 🎶");
-      }).catch((error) => {
-        console.log("User gesture required ❤️", error);
-      });
-    }
-  </script>
-</body>
-</html>
-
-
+      box-shadow: 0 6px 15px rgba(
